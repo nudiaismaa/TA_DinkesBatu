@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: "Roboto", sans-serif !important;
+    background-color: rgba(242, 242, 242, 1) !important;
+}
+
+.btn-primary-color {
+    font-weight: 500;
+    color: white !important;
+    background-color: #84dd63 !important;
+    border-radius: 10px !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary-color {
+    font-weight: 500;
+    color: #0d0d12 !important;
+    background-color: transparent !important;
+    border: 1px solid #84dd63;
+    border-radius: 10px !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary-color:hover {
+    background-color: #5b9945 !important;
+}
+
+.btn-secondary-color:hover {
+    background-color: #84dd63 !important;
+}
+
+.primary-color {
+    color: rgba(132, 221, 99, 1);
+}
+
+.primary-color:hover {
+    color: rgba(88, 147, 66, 1);
+}
+
+/* Custom Tables */
+thead.primary-thead {
+    --bs-table-bg: #e6f8e0 !important; /* Warna biru */
+    color: #1e2022 !important; /* Warna teks putih */
+}
+
+/* Custom Tabs */
+.nav {
+    --bs-nav-link-color: #7e8b9e !important; /* Warna teks */
+    --bs-nav-link-hover-color: #333 !important; /* Warna teks */
+}
+
+.nav-tabs .nav-link.active {
+    color: #333 !important; /* Warna teks */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 10;
+    transition: left 0.3s ease-in-out, background 0.3s;
+    padding: 1rem;
+}
+
+/* Ketika sidebar aktif */
+#sidebar.active {
+    left: 0;
+}
+
+/* Styling Sidebar Header */
+.sidebar-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+}
+
+.sidebar-header img {
+    height: 1.5rem;
+}
+
+.sidebar-toggler {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Sidebar Menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.menu .sidebar-item {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling Link Sidebar */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #7e8b9e;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.sidebar-link i {
+    margin-right: 1rem;
+    color: #7e8b9e;
+}
+
+/* Hover Efek */
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 1.2rem;
+}
+
+/* Styling Aktif Menu */
+.sidebar-item.active > .sidebar-link {
+    background: linear-gradient(90deg, #84dd63 0%, #589342 100%);
+    color: white;
+}
+
+/* Styling Submenu */
+.submenu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.submenu.submenu-open {
+    max-height: 500px; /* Pastikan cukup besar untuk semua submenu */
+}
+
+/* Styling Submenu Item */
+.submenu-item a {
+    padding: 0.5rem 2rem;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #7e8b9e;
+    text-decoration: none;
+    transition: padding-left 0.3s, color 0.3s;
+}
+
+/* Styling Aktif Submenu */
+.submenu-item.active > a {
+    background: linear-gradient(90deg, #84dd63 0%, #589342 100%);
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+/* Hover Submenu */
+.submenu-item a:hover {
+    padding-left: 2.2rem;
+    color: #505864;
+}
+
+/* Tanda Panah untuk Menu yang Memiliki Submenu */
+.sidebar-item.has-sub > .sidebar-link:after {
+    content: "\276F"; /* Panah kanan tanpa fill */
+    font-size: 0.8rem;
+    margin-left: auto;
+    color: #7e8b9e;
+    transition: transform 0.3s;
+    transform: rotate(0deg);
+}
+
+/* Rotate Panah jika Submenu Dibuka */
+.sidebar-item.has-sub.submenu-open > .sidebar-link:after {
+    transform: rotate(90deg);
+}
+
+/* Backdrop */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.sidebar-backdrop.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsive */
+@media screen and (min-width: 1200px) {
+    #sidebar {
+        left: 0;
+    }
+    #main {
+        margin-left: 300px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #sidebar {
+        left: -300px;
+    }
+    #sidebar.active {
+        left: 0;
+    }
+    .sidebar-backdrop.active {
+        display: block;
+    }
+}
+
+/* Style for Toast */
+
+.toast-success {
+    background-color: #d4edda; /* Warna hijau muda */
+    color: #155724; /* Warna teks hijau gelap */
+}
+
+.toast-success .toast-header {
+    background-color: #c3e6cb; /* Warna header hijau muda */
+    color: #155724; /* Warna teks hijau gelap */
+}
+
+.toast-error {
+    background-color: #f8d7da; /* Warna merah muda */
+    color: #721c24; /* Warna teks merah gelap */
+}
+
+.toast-error .toast-header {
+    background-color: #f5c6cb; /* Warna header merah muda */
+    color: #721c24; /* Warna teks merah gelap */
+}
