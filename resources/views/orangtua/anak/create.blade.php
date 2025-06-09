@@ -25,7 +25,7 @@
                         <div class="col-12">
                             <label for="nik" class="form-label">Nomor Induk Kependudukan</label>
                             <input type="number" id="nik" name="nik" class="form-control"
-                                placeholder="Nomor NIK..." required>
+                                placeholder="Nomor RT..." required>
                         </div>
                         <div class="col-12">
                             <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>

@@ -123,9 +123,6 @@ Route::middleware(['auth'])->group(function () {
 
 // Auth routes outside middleware group
 Route::get('/', [AuthController::class, 'index'])->name('login');
-// Menampilkan form login
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-// Proses form login
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/do-register', [AuthController::class, 'store'])->name('auth.register');

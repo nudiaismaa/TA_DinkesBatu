@@ -375,7 +375,8 @@
                             }) {
                                 const point = w.config.series[seriesIndex].data[dataPointIndex];
                                 const kategori = w.config.series[seriesIndex].customCategories?.[
-                                    dataPointIndex] || "Tidak Diketahui";
+                                    dataPointIndex
+                                ] || "Tidak Diketahui";
 
                                 return `
                     <div style="padding: 5px">
@@ -395,7 +396,7 @@
                     chart = new ApexCharts(chartEl, options);
                     chart.render();
                 }
-                
+
 
                 anakSelect.addEventListener("change", function() {
                     const anakId = anakSelect.value;
